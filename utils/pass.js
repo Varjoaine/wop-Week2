@@ -35,7 +35,7 @@ passport.use(new JWTStrategy({
     //find the user in db if needed. This functionality may be omitted if you store everything you'll need in JWT payload.
     return UserModel.getUSer(jwtPayload.id)
         .then(user => {
-            return done(null, {...user}); //... sisälle haetaan kaikki user objektin arvot
+            return done(null, {...user[0]}); //... sisälle haetaan kaikki user objektin arvot
         })
         .catch(err => {
             return done(err);
