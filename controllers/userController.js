@@ -11,21 +11,7 @@ const user_get = async (req, res) => {
   await res.json(user[0]);
 };
 
-const user_create_post = async (req, res) => {
-// Finds validation errors in this request and... 
-
-
-  const params = [
-    req.body.name,
-    req.body.email,
-    req.body.passwd,
-  ];
-  const result = await userModel.addUser(params);
-  await res.json(result);
-};
-
 module.exports = {
   user_list_get,
   user_get,
-  user_create_post,
 };
