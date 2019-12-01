@@ -1,8 +1,9 @@
 'use strict';
-const {validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
 const catModel = require('../models/catModel');
 const resize = require('../utils/resize');
 const imageMeta = require('../utils/imageMeta');
+
 
 const cat_list_get = async (req, res) => {
   const cats = await catModel.getAllCats();
@@ -23,13 +24,19 @@ const cat_create_post = async (req, res) => {
     try {
       // create thumbnail
       const thumb = await resize.makeThumbnail(req.file.path,
-          'thumbnails/' + req.file.filename,
-          {width: 160, height: 160});
+        'thumbnails/' + req.file.filename,
+        { width: 160, height: 160 });
       console.log('thumb', thumb);
+      let coords = [0, 0];
 
-      // get coordinates
-      const coords = await imageMeta.getCoordinates(req.file.path);
-      console.log('coords', coords);
+      try {
+        // get coordinates
+        coords = await imageMeta.getCoordinates(req.file.path);
+        console.log('coords', coords);
+      } catch (error) {
+        console.log('coord cartch', error.message);
+      }
+
 
       const params = [
         req.body.name,
@@ -41,12 +48,12 @@ const cat_create_post = async (req, res) => {
       ]; // or req.body.filename if filename saved to body
       console.log('create', params);
       const cat = await catModel.addCat(params);
-      await res.json({message: 'upload ok'});
-   
+      await res.json({ message: 'upload ok' });
+
       res.json(coords);
     } catch (e) {
-      console.log('exif error', e);
-      res.status(400).json({message: e.message});
+      console.log('general error', e);
+      res.status(400).json({ message: e.message });
     }
   }
 };

@@ -10,16 +10,14 @@ const getCoordinates = (imgFile) => { // imgFile = full path to uploaded image
           console.log('Error: ' + error.message);
           reject(error);
         } else {
-          console.log('GPS', exifData.gps);
           const coordinates = [];
+          //console.log('GPS', exifData.gps);
           if(Object.keys(exifData.gps).length > 0) {
-          
-          
-          // coordinates below should be an array [longitude, latitude]
-          const longitude = gpsToDecimal(exifData.gps.GPSLongitude, exifData.gps.GPSLongitudeRef);
-          const latitude = gpsToDecimal(exifData.gps.GPSLatitude, exifData.gps.GPSLatitudeRef);
-          const coordinates = [longitude, latitude];
-          resolve(exifData); // Do something with your data!
+     // coordinates below should be an array [longitude, latitude]
+          coordinates[0] = gpsToDecimal(exifData.gps.GPSLongitude, exifData.gps.GPSLongitudeRef);
+          coordinates[1] = gpsToDecimal(exifData.gps.GPSLatitude, exifData.gps.GPSLatitudeRef);
+        //  const coordinates = [longitude, latitude];
+         // resolve(exifData); // Do something with your data!
           } else {
             coordinates[0] = 0;
             coordinates[1] = 0;
