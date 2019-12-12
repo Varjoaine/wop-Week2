@@ -1,13 +1,88 @@
+@media only screen and (max-width: 600px) {
+    body {
+       
+        
+    }
+
+li {
+  
+    
+    width: 100%;
+    
+}
+ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 100%;
+  
+}
+
+header {
+  
+ 
+
+}
+  }
+
+
 body {
     margin: 0;
     padding: 0;
     font-family: Verdana;
+    /* oma koodi */
+    width: 100%;
 }
 
+hr {
+}
+
+header {
+    text-align: center;
+    color: #ffffff;
+    /*margin: 1em;*/
+    padding:1em;
+    background-image: url("../images/headerbg.png");
+    background-size: 100%;
+    
+
+}
+
+#pic {
+    max-width: 70px;
+    max-height: 70px;
+    position: relative;
+   /* top: 40px; */
+    left: 47%;
+
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
+#user-info {
+    color: #ffffff;
+    position: absolute; 
+    left: 80%;
+    top: 30px;
+    padding: 1em;
+
+
+}
+
+
+
 .container {
-    max-width: 40em;
+   /* max-width: 40em;*/
     margin: auto;
     padding: 1em;
+    display: block;
+    position: absolute;
+    width: 95%;
+
 }
 
 .light-border {
@@ -26,7 +101,8 @@ ul {
 }
 
 li {
-    width: 30%;
+    width: 100%;
+   /* width: 30%;*/
     margin: .5em;
 }
 
@@ -42,10 +118,14 @@ figure {
 .forms {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .form-wrapper {
-    width: 33%;
+    width: 100%;
+    display: inline-block;
+    padding: 1em;
+    box-sizing: border-box;
 }
 
 input, button, select {
@@ -66,8 +146,9 @@ select {
 }
 
 button{
-    background-color: #ccc;
+    background-color: #7d7d7d;
     color: #fff;
+    border-radius: 8px;
 }
 
 .hide {
@@ -80,7 +161,7 @@ button{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.5);
+    /*background-color: rgba(0,0,0,.5);*/
     position: fixed;
 }
 
@@ -106,4 +187,14 @@ button{
     right: 0;
     width: 400px;
     height: 400px;
+}
+
+#log-out {
+    padding: 20px;
+
+}
+
+h1 {
+text-align: center;
+
 }

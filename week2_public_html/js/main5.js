@@ -47,17 +47,17 @@ const createCatCards = (cats) => {
     h2.innerHTML = cat.name;
 
     const p1 = document.createElement('p');
-    p1.innerHTML = `Age: ${cat.age}`;
+    //p1.innerHTML = `Age: ${cat.age}`;
 
     const p2 = document.createElement('p');
-    p2.innerHTML = `Weight: ${cat.weight}kg`;
+    //p2.innerHTML = `Weight: ${cat.weight}kg`;
 
     const p3 = document.createElement('p');
-    p3.innerHTML = `Owner: ${cat.ownername}`;
+    p3.innerHTML = `Kuvaaja: ${cat.ownername}`;
 
     // add selected cat's values to modify form
     const modButton = document.createElement('button');
-    modButton.innerHTML = 'Modify';
+    modButton.innerHTML = 'Muokkaa';
     modButton.addEventListener('click', () => {
       const inputs = modForm.querySelectorAll('input');
       inputs[0].value = cat.name;
@@ -69,7 +69,7 @@ const createCatCards = (cats) => {
 
     // delete selected cat
     const delButton = document.createElement('button');
-    delButton.innerHTML = 'Delete';
+    delButton.innerHTML = 'Poista';
     delButton.addEventListener('click', async () => {
       const fetchOptions = {
         method: 'DELETE',
@@ -221,7 +221,7 @@ loginForm.addEventListener('submit', async (evt) => {
     loginWrapper.style.display = 'none';
     logOut.style.display = 'block';
     main.style.display = 'block';
-    userInfo.innerHTML = `Hello ${json.user.name}`;
+    userInfo.innerHTML = `Olet kirjautunut sisään käyttäjällä ${json.user.name}`;
     getCat();
     getUsers();
   }
@@ -241,7 +241,7 @@ logOut.addEventListener('click', async (evt) => {
     console.log(json);
     // remove token
     sessionStorage.removeItem('token');
-    alert('You have logged out');
+    alert('Olet nyt kirjautunut ulos');
     // show/hide forms + cats
     loginWrapper.style.display = 'flex';
     logOut.style.display = 'none';
@@ -272,7 +272,7 @@ addUserForm.addEventListener('submit', async (evt) => {
   loginWrapper.style.display = 'none';
   logOut.style.display = 'block';
   main.style.display = 'block';
-  userInfo.innerHTML = `Hello ${json.user.name}`;
+  userInfo.innerHTML = `Olet kirjautunut sisään käyttäjällä ${json.user.name}`;
   getCat();
   getUsers();
 });
@@ -284,4 +284,5 @@ if (sessionStorage.getItem('token')) {
   main.style.display = 'block';
   getCat();
   getUsers();
+  
 }

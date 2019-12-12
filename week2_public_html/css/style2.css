@@ -44,8 +44,9 @@ figure {
     flex-wrap: wrap;
 }
 
+
 .form-wrapper {
-    width: 33%;
+    width: 100%;
 }
 
 input, button, select {

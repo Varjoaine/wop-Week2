@@ -2,86 +2,95 @@
 <html>
 <head>
     <meta charset="utf8">
-    <title>Example</title>
+    <title>Kuvanjakosovellus</title>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css" rel="stylesheet"/>
     <link href="./css/style5.css" rel="stylesheet">
 </head>
 <body>
+ <header>  
+     Rate my Anything
+     <div id="pic">
+     <img src="./images/camera-logo.png" alt="camera_logo">
+    </div>
+     <div id="user-info">
+        <!--- <p id="user-info"></p>-->
+    </div>  
+</header>
 <div class="container">
     <div class="forms" id="login-wrapper">
         <div class="form-wrapper">
-            <h3>Login</h3>
+            <h3>Kirjautuminen</h3>
             <form id="login-form" class="light-border">
                 <div>
-                    <label>Email:</label>
+                    <label>Sähköposti:</label>
                     <input class="light-border" type="text" name="username"/>
                 </div>
                 <div>
-                    <label>Password:</label>
+                    <label>Salasana:</label>
                     <input class="light-border" type="password" name="password"/>
                 </div>
                 <div>
-                    <button class="light-border" type="submit">Log In</button>
+                    <button class="light-border" type="submit">Kirjaudu sisään</button>
                 </div>
             </form>
         </div>
         <div class="form-wrapper">
-            <h3>Register</h3>
+            <h3>Rekisteröinti</h3>
             <form class="light-border" id="add-user-form">
                 <input class="light-border"
                        type="text"
                        name="name"
                        pattern=".{3,}"
-                       placeholder="Name"
+                       placeholder="Nimimerkki"
                        required>
-                <input class="light-border" type="email" name="username" placeholder="email" required>
+                <input class="light-border" type="email" name="username" placeholder="Sähköposti" required>
                 <input class="light-border" type="password" name="password" pattern="(?=.*[A-Z]).{8,}"
-                       placeholder="Password" required>
-                <button class="light-border" type="submit">Save</button>
+                       placeholder="Salasana" required>
+                <button class="light-border" type="submit">Rekisteröidy</button>
             </form>
         </div>
     </div>
-    <header id="log-out" style="display: none;">
-        <p id="user-info"></p>
-        <button class="light-border">Log out</button>
-    </header>
+
     <main style="display: none">
-        <h1>List of cats</h1>
+            <div>
+               
+            </div>
+        <h1>Kuvafeedi</h1>
         <ul>
             <!-- js creates list here -->
         </ul>
         <hr>
         <div class="forms">
-
+           
             <div class="form-wrapper">
-                <h3>Add cat</h3>
+                <h3>Lisää kuva</h3>
                 <form class="light-border"
                       enctype="multipart/form-data"
                       id="add-cat-form">
-                    <input class="light-border" type="text" name="name" placeholder="Name" required>
-                    <input class="light-border" type="number" name="age" placeholder="Age" required>
+                    <input class="light-border" type="text" name="name" placeholder="Nimi" required>
+                    <input class="light-border" type="number" name="age" placeholder="Ikä" required>
                     <input class="light-border"
                            type="number"
                            step="0.1"
                            name="weight"
-                           placeholder="Weight"
+                           placeholder="Paino"
                            required>
                     <select class="light-border add-owner" name="owner" required>
-                        <option value="">Select owner</option>
+                        <option value="">Kuvaaja</option>
                     </select>
                     <input class="light-border"
                            type="file"
                            name="cat"
                            accept="image/*"
                            placeholder="Choose file">
-                    <button class="light-border" type="submit">Upload</button>
+                    <button class="light-border" type="submit">Lisää</button>
                 </form>
             </div>
-
-            <div class="form-wrapper">
-                <h3>Modify cat</h3>
+            
+        <div class="form-wrapper" style="display: none">
+                <h3>Muokkaa kuvaa</h3>
                 <form id="mod-cat-form" class="light-border">
-                    <input class="light-border" type="text" name="name" placeholder="Name" required>
+                    <input class="light-border" type="text" name="name" placeholder="Nimi" required>
                     <input class="light-border" type="number" name="age" placeholder="Age" required>
                     <input class="light-border"
                            type="number"
@@ -90,14 +99,21 @@
                            placeholder="Weight"
                            required>
                     <select class="light-border add-owner" name="owner" required>
-                        <option value="">Select owner</option>
+                        <option value="">Valitse kuvaaja</option>
                     </select>
                     <input type="hidden" name="id">
-                    <button class="light-border" type="submit">Save changes</button>
+                    <button class="light-border" type="submit">Tallenna</button>
                 </form>
             </div>
         </div>
+      
     </main>
+    <div id="log-out" style="display: none">
+            <!--<p id="user-info"></p>-->
+            <button class="light-border" style="background-color: #ccc">Kirjaudu ulos</button>
+           
+       </div>
+   
 </div>
 <div class="hide modal" id="image-modal">
     <a href="#" class="close">Close</a>
