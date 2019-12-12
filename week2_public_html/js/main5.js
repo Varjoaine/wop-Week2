@@ -15,6 +15,7 @@ const userLists = document.querySelectorAll('.add-owner');
 const imageModal = document.querySelector('#image-modal');
 const modalImage = document.querySelector('#image-modal img');
 const close = document.querySelector('#image-modal a');
+const texti = document.querySelector('#esittely');
 
 // create cat cards
 const createCatCards = (cats) => {
@@ -221,7 +222,7 @@ loginForm.addEventListener('submit', async (evt) => {
     loginWrapper.style.display = 'none';
     logOut.style.display = 'block';
     main.style.display = 'block';
-    userInfo.innerHTML = `Olet kirjautunut sisään käyttäjällä ${json.user.name}`;
+    userInfo.innerHTML = `Tervetuloa ${json.user.name}`;
     getCat();
     getUsers();
   }
@@ -278,7 +279,9 @@ addUserForm.addEventListener('submit', async (evt) => {
 });
 
 // when app starts, check if token exists and hide login form, show logout button and main content, get cats and users
-if (sessionStorage.getItem('token')) {
+//sessionStorage.setItem('token', json.token);
+
+  if (sessionStorage.getItem('token')) {
   loginWrapper.style.display = 'none';
   logOut.style.display = 'block';
   main.style.display = 'block';

@@ -1,29 +1,3 @@
-@media only screen and (max-width: 600px) {
-    body {
-       
-        
-    }
-
-li {
-  
-    
-    width: 100%;
-    
-}
-ul {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    width: 100%;
-  
-}
-
-header {
-  
- 
-
-}
-  }
 
 
 body {
@@ -34,18 +8,25 @@ body {
     width: 100%;
 }
 
-hr {
-}
-
 header {
     text-align: center;
     color: #ffffff;
-    /*margin: 1em;*/
     padding:1em;
     background-image: url("../images/headerbg.png");
     background-size: 100%;
-    
+    background-repeat: no-repeat;
+    /*width: 100%;*/
 
+
+}
+
+#esittely {
+width: 100%;
+}
+
+.teksti {
+    margin: 10px;
+    
 }
 
 #pic {
@@ -64,11 +45,13 @@ img {
 }
 
 #user-info {
-    color: #ffffff;
+    color: #000;
     position: absolute; 
     left: 80%;
     top: 30px;
     padding: 1em;
+    background-color: #fff;
+    border-radius: 8px;
 
 
 }
@@ -78,10 +61,10 @@ img {
 .container {
    /* max-width: 40em;*/
     margin: auto;
-    padding: 1em;
+    /*padding: 1em;*/
     display: block;
     position: absolute;
-    width: 95%;
+    width: 100%;
 
 }
 
@@ -96,14 +79,17 @@ ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    display: flex;
-    flex-wrap: nowrap;
+   /* display: flex;*/
+    /*flex-wrap: nowrap;*/
+    float: left;
+    width: 100%;
+    height: auto;
 }
 
 li {
-    width: 100%;
-   /* width: 30%;*/
+    width: 23%;
     margin: .5em;
+    float: left;
 }
 
 figure {
@@ -198,3 +184,14 @@ h1 {
 text-align: center;
 
 }
+
+@media screen and (max-width: 599px) {
+
+
+    li {
+        
+        width: 97%;
+        float: none;
+    }
+    
+      }

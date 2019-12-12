@@ -11,7 +11,7 @@ const login = (req, res) => {
     if (err || !user) {
       console.log('login error', err, user);
       return res.status(400).json({
-        message: 'Something is not right',
+        message: 'Tarkista käyttäjätunnus ja salasana',
         user: user,
       });
     }
